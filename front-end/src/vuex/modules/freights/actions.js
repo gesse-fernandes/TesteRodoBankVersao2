@@ -52,7 +52,7 @@ export default {
         formData.append('_method', 'PATCH')
 
         return new Promise((resolve, reject) => {
-            axios.post(`${URL_BASE}${RESOURCE}${formData.get('id')}`, formData, CONFIG)
+            axios.put(`${URL_BASE}${RESOURCE}${formData.get('id')}`, formData, CONFIG)
                     .then(response => resolve())
                     .catch(error => reject(error.response.data.errors))
                     .finally(() => context.commit('LOADING', false))
