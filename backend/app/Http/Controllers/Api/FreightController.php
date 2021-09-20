@@ -143,7 +143,7 @@ class FreightController extends Controller
             'price_freight' => 'required',
             'date_start' => 'required|date_format:Y-m-d',
             'date_end' => 'required|date_format:Y-m-d',
-            'status' => 'required|in:Iniciado,em trânsito,concluido',
+            'status' => 'required|in:Iniciado,em trânsito,concluído',
           ],
           //TODO mensagens de validação mando pro front-end
           [
@@ -155,7 +155,7 @@ class FreightController extends Controller
             'date_end.date_format' => 'formato de data invalido',
             'date_end.required' => 'Data fim Obrigatória',
             'status.required' => 'Status Obrigatório',
-            'status.in' => 'Permitidos apenas(Iniciado,em trânsito,concluido)'
+            'status.in' => 'Permitidos apenas(Iniciado,em trânsito,concluído)'
           ]);
           /*
           TODO aqui verifico se existe esse frete

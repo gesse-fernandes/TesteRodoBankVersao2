@@ -1,15 +1,15 @@
 
 import Page404 from '../components/frontend/pages/404/Page404'
-import SiteComponent from '../components/frontend/SiteComponent'
+import App from '../components/frontend/AppComponent'
 import HomePageComponent from '../components/frontend/pages/home/HomePageComponent'
 
 export default [
     /**
-     * Rotas Site
+     * Rotas Sistema
      */
     {
         path: '/',
-        component: SiteComponent,
+        component: App,
         meta: {
             auth: false
         },
