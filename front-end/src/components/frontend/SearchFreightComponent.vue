@@ -1,0 +1,25 @@
+<template>
+  <div>
+      <form class="form form-inline" @submit.prevent="searchFreight">
+          <input type="text" v-model="search" placeholder="Buscar a placa do veiculo?" class="form-control mr-sm-2">
+
+          <button type="submit" class="btn btn-outline-success">Buscar</button>
+      </form>
+  </div>
+</template>
+
+
+<script>
+export default {
+  data () {
+      return {
+          search: ''
+      }
+  },
+  methods: {
+      searchFreight () {
+          this.$emit('search', this.search)
+      }
+  }
+}
+</script>
