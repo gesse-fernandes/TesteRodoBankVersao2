@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //TODO aqui onde chamo a minha class FreightSeed
+        //TODO para ser executada.
         $this->call(FreightSeed::class);
     }
 }

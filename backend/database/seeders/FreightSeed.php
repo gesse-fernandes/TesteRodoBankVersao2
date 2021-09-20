@@ -12,6 +12,9 @@ class FreightSeed extends Seeder
      *
      * @return void
      */
+    //TODO aqui minha função run
+    //TODO onde vai criar os dados de inicio que serão
+    //TODO executados pelo --seed
     public function run()
     {
       Freight::create([

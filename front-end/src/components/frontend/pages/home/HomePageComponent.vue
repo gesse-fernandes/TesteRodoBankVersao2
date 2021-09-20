@@ -42,7 +42,7 @@
           <a href="#" @click.prevent="edit(freight.id)" class="btn btn-info">
             Editar
           </a>
-          <button v-on:click="teste(freight.id)" class="btn btn-danger">
+          <button v-on:click="deletar(freight.id)" class="btn btn-danger">
             Deletar
           </button>
         </td>
@@ -133,7 +133,7 @@ export default {
       this.search = search;
       this.loadFreights();
     },
-    teste(id) {
+    deletar(id) {
       if (confirm("Confirma a exclusão?")) {
         this.destroy(id);
       }

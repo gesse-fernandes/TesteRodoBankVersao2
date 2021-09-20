@@ -14,4 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//TODO aqui eu crio uma unica rota resource
+//TODO pois ela serve para simplificar
+//TODO as outras rotas assim não criando
+//TODO na mão ja fica como referencia
+//TODO todos os metodos deste controller(index,store,show,update e destroy)
+
 Route::resource('freight', 'Api\FreightController');

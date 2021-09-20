@@ -14,19 +14,19 @@ class CreateFreightsTable extends Migration
     public function up()
     {
         Schema::create('freights', function (Blueprint $table) {
-            //meu id
+            //TODO meu id
             $table->id();
-            //a placa do veiculo precisa ser unique ja que só existe uma unica placa de veiculo nunca é a mesma não pode haver duplicada
+            //TODO a placa do veiculo precisa ser unique ja que só existe uma unica placa de veiculo nunca é a mesma não pode haver duplicada
             $table->string('board')->unique();
-            //coluna dono do veiculo
+            //TODO coluna dono do veiculo
             $table->string('vehicle_owner');
-            //o valor do frete
+            //TODO o valor do frete
             $table->decimal('price_freight', 10, 2);
-            //a data de inicio
+            //TODO a data de inicio
             $table->date('date_start');
-            //a data de fim
+            //TODO a data de fim
             $table->date('date_end');
-            //status coloquei como enum pois vai ser 3 opções.
+            //TODO status coloquei como enum pois vai ser 3 opções.
             $table->enum('status', ['Iniciado', 'em trânsito', 'concluído']);
         });
     }

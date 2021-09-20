@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Freight extends Model
 {
-    //caso queira usar uma factorie pra gerar dados falsos
+    // TODO caso queira usar uma factorie pra gerar dados falsos
     use HasFactory;
-    //declaro o timestamps como falso para desabilitar colunas como create_at & update_at
+    //TODO declaro o timestamps como falso para desabilitar colunas como create_at & update_at
     public $timestamps = false;
-    //aqui defino os campos que vão ser preenchidos
+    //TODO aqui defino os campos que vão ser preenchidos
     protected $fillable =
     [
         'id',
@@ -23,7 +23,7 @@ class Freight extends Model
         'status'
 
     ];
-    //aqui onde vai ser os campos obrigatorios na validação
+    //TODO aqui onde vai ser os campos obrigatorios na validação
     public static $rules =
     [
         'board' => 'required|unique:freights',
@@ -33,10 +33,11 @@ class Freight extends Model
         'date_end' => 'required|date_format:Y-m-d',
         'status' => 'required|in:Iniciado,em trânsito,concluido',
     ];
-    //mensagens de validação
+    //TODO mensagens de validação
     public static $messages =
     [
         'board.required' => 'Placa do veiculo é Obrigatória',
+        'board.unique'=>'Placa Já existe não pode ser usada',
         'vehicle_owner.required' => 'Dono do Veiculo é Obrigatório',
         'price_freight.required' => 'Valor do frete Obrigatóio',
         'date_start.required' => 'Data inicio Obrigatória',
@@ -48,11 +49,11 @@ class Freight extends Model
     ];
     public function getResults(array $data, int $totalPage)
     {
-        // Se não existir filtro (name, description ou filter) retorna todos os resultados, paginados
+        //TODO Se não existir filtro (board, vehicle_owner ou filter) retorna todos os resultados, paginados
         if (!isset($data['board']) && !isset($data['vehicle_owner']) && !isset($data['price_freight']) && !isset($data['date_start']) && !isset($data['date_end']))
         return $this->orderBy('id', 'DESC')->paginate($totalPage);
 
-        // Traz os resultados filtrados
+        //TODO Traz os resultados filtrados
         return $this->where(function ($query) use ($data) {
             if (isset($data['board'])) {
                 $board = $data['board'];
@@ -72,6 +73,6 @@ class Freight extends Model
             }
         })
             ->orderBy('id', 'DESC')
-            ->paginate($totalPage); // ->toSql();
+            ->paginate($totalPage); //TODO  ->toSql();
     }
 }

@@ -12,6 +12,9 @@ class FreightRequest extends FormRequest
      *
      * @return bool
      */
+    //aqui autorizo para que eu possa fazer o uso
+    //chamar os arrays estaticos rules e messages
+    //por padrão vem false.
     public function authorize()
  {
         return true;
@@ -22,10 +25,19 @@ class FreightRequest extends FormRequest
      *
      * @return array
      */
+    //TODO aqui eu chamo o meu model Freight
+    //TODO fazendo o uso :: quando quero
+    //TODO chamar uma funcao ou variavel
+    //TODO sendo estatica aqui vai ser os campos
+    //TODO que são obrigatorios desse array
+    //TODO e fazendo o uso da funcao rules.
     public function rules()
     {
         return Freight::$rules;
     }
+    //TODO uma função messages
+    //TODO que vai retornar as minhas mensagens
+    //TODO lá para o meu controller
     public function messages()
     {
         return Freight::$messages;
